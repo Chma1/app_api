@@ -20,16 +20,17 @@
   </nav>
   <router-view/>
   <!-- <Products /> -->
+  <Footer/>
 </template>
 
 <script>
 // import Products from "./components/Products.vue";
+import Footer from './views/Footer.vue'
 
 export default {
   name: "App",
   components: {
-    // Products,
-  },
+Footer  },
 };
 </script>
 
