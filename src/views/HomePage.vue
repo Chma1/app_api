@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="container  my-2">
+    <div class="container  my-3">
       <div id="carouselExampleDark" class="carousel carousel-dark slidev ">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
@@ -20,22 +20,23 @@
           <img src="../assets/banner_2.jpg" class="d-block w-100  my-3" style="height: 050vh" alt="..." />
         </div>
       </div>
-      <button class="carousel-control-prev w-25" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <button class="carousel-control-prev btn_carrusel " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="carousel-control-next w-25" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <button class="carousel-control-next btn_carrusel" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
       <Welcome class="my-3" />
-      <Products />
+      <Products v-if="showProduct" />
     </div>
   </main>
 </template>
 <script>
 import Welcome from "@/components/Welcome.vue";
 import Products from "@/components/Products.vue";
+import { ref } from 'vue';
 
 export default {
   components: {
@@ -43,8 +44,21 @@ export default {
     Products,
   },
   props: {
-    products: [],
+    
   },
-  setup() { },
+  setup() { 
+    const showProduct=ref(false)
+    return{
+      showProduct
+    }
+  },
 };
 </script>
+<style scoped>
+.btn_carrusel{
+  display: flex;
+  top: 200px;
+  justify-items: center;
+  height: 15vh;
+}
+</style>

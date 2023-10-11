@@ -2,13 +2,13 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    products: [],
+    products:[],
   },
   getters: {},
   mutations: {
     setProduct(state, payload) {
       state.products = payload;
-      // console.log(state.products);
+      console.log(state.products);
     },
   },
   actions: {
