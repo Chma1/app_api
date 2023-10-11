@@ -4,6 +4,7 @@
       <Register :showDisplay="showDisplay" v-if="!newValue" />
       <Login :showDisplay="showDisplay" v-if="newValue" />
     </div>
+  <router-view />
   </main>
 </template>
 <script>

@@ -1,40 +1,39 @@
 <template>
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 my-4">
-                    <div class="card">
-                        <div class="row ">
-                            <div class="col-sm-4  ">
-                                <div class="bg_sign p-4">
+            <div class="d-flex justify-content-center">
 
-                                    <h4 class="display-4 text-center text-white">Welcome Back!</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-                                    deserunt!
-                                    Exercitationem dolore quas quasi quibusdam impedit laborum assumenda, atque adipisci
-                                    recusandae, nulla, odit voluptates tempora?</p>
-                                <button class="btn btn_sign w-100 mb-4" @click="showDisplay()">SIGN IN</button>
-                                </div>
-                               
-                            </div>
-                            <div class="col-sm-8 text-center">
-                                <h4 class="display-4 text-center mb-3">Create Account</h4>
-                                <form>
-                                    <div class="p-4">
-                                        <div class="form-group  p-2">
-                                            <input type="text" placeholder="Your Name" class="form-control ">
-                                        </div>
-                                        <div class="form-group  p-2 ">
-                                            <input type="email" placeholder="corremeo@gmal.com" class="form-control">
-                                        </div>
-                                        <div class="form-group  p-2 mb-2">
-                                            <input type="password" placeholder="Create password" class="form-control ">
-                                        </div>
-                                        <button class="btn btn-primary mb-3 w-75" type="submit">Create Account</button>
-                                    </div>
-                                </form>
-                            </div>
-
+                <div class="card my-4 p-2 col-sm-6">
+                    <div class="card-head text-center">
+                        <h4 class="display-6">Create Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Name:</label>
+                            <input type="text" placeholder="Your name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">@mail:</label>
+                            <input type="text" placeholder="email@correos.com" class="form-control">
+                        </div>
+                        <div class="form-group ">
+                            <label class="form-label">Password:</label>
+                            <input type="text" placeholder="Create password" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Confirm:</label>
+                            <input type="text" placeholder="Confirm password" class="form-control">
+                        </div>
+                        <div class="text-secondary my-3">
+                            <p class="fs-6">Dont have on Account, <b class="text-success" @click="showDisplay()">Sign in</b>
+                            </p>
+                        </div>
+                        <div class="form-group text-center mb-2">
+                            <button class="btn btn-primary" :disabled="!valideChebox" >Create Account</button>
+                        </div>
+                        <div class="text-secondary text-center my-3">
+                            <input type="checkbox" class="form-checkbox m-2" v-model="valideChebox" >
+                            <span>Accept Terms and Conditions</span>
                         </div>
                     </div>
                 </div>
@@ -44,20 +43,19 @@
     </main>
 </template>
 <script>
+import { ref } from 'vue'
 export default {
     props: {
         showDisplay: Function
+    },
+    setup(){
+        const valideChebox=ref(false)
+     
+        return{
+            valideChebox,
+        }
     }
 }
 </script>
 <style scoped>
-.bg_sign {
-    background:
-        #6b0080e0;
-}
-
-.btn_sign {
-    background: #030303e0;
-    color: white;
-}
 </style>

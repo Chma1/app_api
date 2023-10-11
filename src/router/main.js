@@ -18,7 +18,7 @@ const routes = [
     component: Product,
   },
   {
-    path: "/myAccount/",
+    path: "/myAccount",
     name: "MyAccount",
     component: MyAccount,
     children: [
